@@ -11,7 +11,7 @@ public class IndexController {
 	@RequestMapping(value="/", method=RequestMethod.GET)
 	public String index(Model model){
 		model.addAttribute("titulo", "Hola mundo!");
-		model.addAttribute("mensaje", "Despliegue Automatico");
+		model.addAttribute("mensaje", "Despliegue Automatico - ejecución de pruebas");
 		return "index";
 	}
 }
