@@ -3,6 +3,6 @@ node{
     git 'https://github.com/Jhmedinaa/GestionConfiguracion'  
   }
   stage('Compile-package'){
-    sh 'mvn package'
+    sh 'mvn spring-boot:run'
   }
 }
