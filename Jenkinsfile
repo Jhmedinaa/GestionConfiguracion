@@ -3,6 +3,6 @@ node{
     git 'https://github.com/Jhmedinaa/GestionConfiguracion'  
   }
   stage('Compile-package'){
-    sh 'mv package'
+    sh 'mvn package'
   }
 }
