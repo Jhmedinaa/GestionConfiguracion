@@ -3,6 +3,7 @@ node{
     git 'https://github.com/Jhmedinaa/GestionConfiguracion'  
   }
   stage('Compile-Package'){
-    bat 'mvn spring-boot:run'
+    def mvnHome = tool name: 'maven 3.5.4', type: 'maven'
+    bat "${mvnHome}/bin/mvn spring-boot:run"
   }
 }
