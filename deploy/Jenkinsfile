@@ -2,15 +2,27 @@ node{
   stage('SCM Checkout'){
     git 'https://github.com/Jhmedinaa/GestionConfiguracion'  
   }
-  stage('Compile-Package'){
-    def mvnHome = tool name: 'maven 3.5.4', type: 'maven'
-    bat "cd deploy & mvn clean package"
+   stage('Slack Git Sin'){
+    slackSend baseUrl: 'https://hooks.slack.com/services/', channel: '#jenkins-pipeline', color: 'good', message: 'Jenkins Slack menssage, Sincronizacion Completa', teamDomain: 'eafitgentionconfi', tokenCredentialId: 'slack-mess'
+
   }
-  stage('Sonar Analisis'){
+  
+   stage('Sonar Analisis'){
     withSonarQubeEnv('jenkins-pipeline'){
      bat "cd deploy & mvn sonar:sonar"
     }
   }
+  
+  stage('Slack Analisis'){
+    slackSend baseUrl: 'https://hooks.slack.com/services/', channel: '#jenkins-pipeline', color: 'good', message: 'Jenkins Slack menssage, Pruebas realizadas y completas', teamDomain: 'eafitgentionconfi', tokenCredentialId: 'slack-mess'
+
+  }
+  
+  stage('Compile-Package'){
+    def mvnHome = tool name: 'maven 3.5.4', type: 'maven'
+    bat "cd deploy & mvn clean package"
+  }
+ 
   stage('Email Compilacion'){
     mail bcc: '', body: '''Jenkins pipeline work,
 
