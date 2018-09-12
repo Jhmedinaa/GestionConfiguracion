@@ -4,6 +4,6 @@ node{
   }
   stage('Compile-Package'){
     def mvnHome = tool name: 'maven 3.5.4', type: 'maven'
-    bat ${mvnHome}/bin/mvn "spring-boot:run"
+    bat "${mvnHome}/bin/"mvn "spring-boot:run"
   }
 }
