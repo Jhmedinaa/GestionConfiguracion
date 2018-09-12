@@ -6,4 +6,9 @@ node{
     def mvnHome = tool name: 'maven 3.5.4', type: 'maven'
     bat "cd deploy & mvn spring-boot:run"
   }
+  stage('Email Compilacion'){
+    mail bcc: '', body: '''Jenkins pipeline work,
+
+Alerta de  jenkins.''', cc: 'jhmedinaa@eafit.edu.co', from: '', replyTo: '', subject: 'Jenkins pipeline work', to: 'aolopezh@eafit.edu.co'
+  }
 }
