@@ -9,6 +9,10 @@ node{
   stage('Email Compilacion'){
     mail bcc: '', body: '''Jenkins pipeline work,
 
-Alerta de  jenkins.''', cc: 'jhmedinaa@eafit.edu.co', from: '', replyTo: '', subject: 'Jenkins pipeline work', to: 'aolopezh@eafit.edu.co'
+    Alerta de  jenkins.''', cc: 'jhmedinaa@eafit.edu.co', from: '', replyTo: '', subject: 'Jenkins pipeline work', to: 'aolopezh@eafit.edu.co'
+  }
+  stage('Slack Com'){
+    slackSend baseUrl: 'https://hooks.slack.com/services/', channel: '#jenkins-pipeline', color: 'good', message: 'Jenkins Slack menssage, compilacion completa', teamDomain: 'eafitgentionconfi', tokenCredentialId: 'slack-mess'
+
   }
 }
