@@ -8,7 +8,7 @@ node{
   }
   stage('Sonar Analisis'){
     withSonarQubeEnv('jenkins-pipeline'){
-     bat "mvn sonar:sonar"
+     bat "cd deploy & mvn sonar:sonar"
     }
   }
   stage('Email Compilacion'){
