@@ -6,6 +6,11 @@ node{
     def mvnHome = tool name: 'maven 3.5.4', type: 'maven'
     bat "cd deploy & mvn clean package"
   }
+  stage('Sonar Analisis'){
+    withSonarQubeEnv('jenkins-pipeline'){
+     bat "mvn sonar:sonar"
+    }
+  }
   stage('Email Compilacion'){
     mail bcc: '', body: '''Jenkins pipeline work,
 
