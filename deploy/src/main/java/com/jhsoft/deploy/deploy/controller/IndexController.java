@@ -14,4 +14,10 @@ public class IndexController {
 		model.addAttribute("mensaje", "Despliegue Automatico - ejecución de pruebas");
 		return "index";
 	}
+	
+	public void mayorDeEdad(int edad){
+		if(edad < 18){
+			throw new RuntimeException("usted es menos de edad");
+		}
+	}
 }
