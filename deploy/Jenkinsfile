@@ -20,7 +20,7 @@ node{
   
   stage('Compile-Package'){
     def mvnHome = tool name: 'maven 3.5.4', type: 'maven'
-    bat "cd deploy & mvn clean package"
+    bat "cd deploy & mvn clean install & mvn clean package"
   }
  
   stage('Email Compilacion'){
