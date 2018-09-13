@@ -17,7 +17,7 @@ public class IndexController {
 	
 	public void mayorDeEdad(int edad){
 		if(edad < 18){
-			throw new RuntimeException("usted es menos de edad");
+			throw new RuntimeException("usted es menor de edad");
 		}
 	}
 }

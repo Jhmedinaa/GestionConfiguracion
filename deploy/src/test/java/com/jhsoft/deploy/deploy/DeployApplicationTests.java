@@ -18,7 +18,12 @@ public class DeployApplicationTests {
 	@Test
 	public void pruebaMayorDeEdad() {
 		IndexController c = new IndexController();
+		c.mayorDeEdad(19);
+	}
+	
+	@Test(expected= RuntimeException.class)
+	public void pruebaMenorDeEdad() {
+		IndexController c = new IndexController();
 		c.mayorDeEdad(8);
 	}
-		
 }
