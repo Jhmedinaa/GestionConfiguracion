@@ -10,11 +10,11 @@ import com.jhsoft.deploy.deploy.controller.IndexController;
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class DeployApplicationTests {
-
+/*
 	@Test
 	public void contextLoads() {
 	}
-/*
+
 	@Test
 	public void pruebaMayorDeEdad() {
 		IndexController c = new IndexController();
