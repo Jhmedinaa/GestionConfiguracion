@@ -18,7 +18,7 @@ public class DeployApplicationTests {
 	@Test
 	public void pruebaMayorDeEdad() {
 		IndexController c = new IndexController();
-		c.mayorDeEdad(22);
+		c.mayorDeEdad(8);
 	}
 		
 }
